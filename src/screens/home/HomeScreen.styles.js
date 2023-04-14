@@ -11,7 +11,6 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     justifyContent: "center",
-    top: -50,
   },
   title: {
     fontSize: FONT_SIZE.xxxl,
