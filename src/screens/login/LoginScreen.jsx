@@ -1,13 +1,10 @@
-import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Controller, useForm } from 'react-hook-form'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { getUsers } from '../../api/user/user.service'
+import { User } from '../../api/user/user'
 import { useUser } from '../../contexts/UserContext'
-import { styles } from './LoginScreen.styles'
 import { SCREENS } from '../../utils'
-
-const getUser = (usersList, username) => usersList.filter(user => user.username === username)[0]
+import { styles } from './LoginScreen.styles'
 
 export const LoginScreen = () => {
   const navigation = useNavigation()
@@ -20,17 +17,11 @@ export const LoginScreen = () => {
   })
 
   const handleLogin = ({ username, password }) => {
-    getUsers()
-      .then(users => {
-        const user = getUser(users, username)
-        if (username === user.username && password === user.password) {
-          setCurrentUser(user)
-          navigation.navigate(SCREENS.HOME)
-        } else {
-          console.log(user)
-        }
+    User.LogIn(username, password)
+      .then(user => {
+        setCurrentUser(user)
+        navigation.navigate(SCREENS.HOME)
       })
-      .catch(err => console.warn(err))
   }
 
   return (
