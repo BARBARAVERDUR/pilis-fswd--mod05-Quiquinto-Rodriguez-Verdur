@@ -6,7 +6,7 @@ export const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>
-        Viaja y disfruta!
+        Consulta el Calendario de Jujuy y enterate de todos los eventos!
       </Text>
     </SafeAreaView>
   )

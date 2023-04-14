@@ -1,5 +1,5 @@
 export * from './home/HomeScreen'
-export * from './location-detail/EventDetailScreen'
+export * from './event-detail/EventDetailScreen'
 export * from './event-list/EventsListScreen'
 export * from './main-stack/MainStackScreen'
 export * from './login/LoginScreen'
