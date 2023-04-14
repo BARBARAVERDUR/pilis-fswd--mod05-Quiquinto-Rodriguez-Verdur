@@ -7,12 +7,12 @@ export const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <ImageBackground
         style={styles.bgImage}
-        source={require("../../../assets/main.jpg")}
+        source={require('../../../assets/main.jpg')}
       >
         <Text style={styles.title}>
           Consulta el Calendario de Jujuy y enterate de todos los eventos!
         </Text>
       </ImageBackground>
     </SafeAreaView>
-  );
+  )
 }
