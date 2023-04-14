@@ -43,4 +43,6 @@ User {
 ## Nota
 Los nombres usuarios de testing son los respectivos de la cuenta de github con la **contraseña 1234**
 
-
+# Integrantes
+- Valeria del Valle, Quiquinto
+- Jesus Matias, Rodriguez
