@@ -3,7 +3,7 @@ import { View, Text, SafeAreaView, FlatList, Pressable, Image } from 'react-nati
 import { styles } from './LocationListScreen.styles'
 // import { data } from '../../api/data'
 import { SearchBar } from '../../components/search-bar/SearchBar'
-import { getEventsList } from '../../api/events/events.service'
+import { Events } from '../../api/events'
 import { SCREENS } from '../../utils'
 
 const Card = ({ onPress, event }) => (
@@ -28,7 +28,7 @@ export const EventsListScreen = ({ navigation }) => {
   ))
 
   useEffect(() => {
-    getEventsList()
+    Events.GetEventsList()
       .then(events => {
         setEventsList(events)
       })
