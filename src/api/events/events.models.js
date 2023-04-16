@@ -13,7 +13,7 @@ export class Event {
     return new Event(
       event.id,
       event.name,
-      event.image,
+      event.images,
       event.date,
       event.time,
       event.place,
