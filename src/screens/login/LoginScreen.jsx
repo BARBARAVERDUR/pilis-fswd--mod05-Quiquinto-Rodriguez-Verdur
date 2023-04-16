@@ -19,8 +19,10 @@ export const LoginScreen = () => {
   const handleLogin = ({ username, password }) => {
     User.LogIn(username, password)
       .then(user => {
-        setCurrentUser(user)
-        navigation.navigate(SCREENS.HOME)
+        if (user !== null) {
+          setCurrentUser(user)
+          navigation.navigate(SCREENS.HOME)
+        }
       })
   }
 
