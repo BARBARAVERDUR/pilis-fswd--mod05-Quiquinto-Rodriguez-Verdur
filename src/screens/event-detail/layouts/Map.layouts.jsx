@@ -1,6 +1,6 @@
 import { Image, Text, TouchableWithoutFeedback, View } from 'react-native'
 import { Maps } from '../../../components'
-import { useUser } from '../../../contexts/UserContext'
+import { useUser } from '../../../contexts/userContext'
 import { styles } from '../LocationDetailScreen.styles'
 import { useNavigation } from '@react-navigation/native'
 import { SCREENS } from '../../../utils'

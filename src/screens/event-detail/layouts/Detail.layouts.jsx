@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native'
 import { styles } from '../LocationDetailScreen.styles'
 import { Fav } from '../../../components'
-import { useUser } from '../../../contexts/UserContext' 
+import { useUser } from '../../../contexts/userContext'
 import { useState } from 'react'
 
 export const Detail = ({ event }) => {

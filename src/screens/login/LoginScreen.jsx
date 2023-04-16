@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Controller, useForm } from 'react-hook-form'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { User } from '../../api/user/user'
-import { useUser } from '../../contexts/UserContext'
+import { useUser } from '../../contexts/userContext'
 import { SCREENS } from '../../utils'
 import { styles } from './LoginScreen.styles'
 

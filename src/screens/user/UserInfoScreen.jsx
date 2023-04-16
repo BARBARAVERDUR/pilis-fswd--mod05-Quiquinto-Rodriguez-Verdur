@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
-import { useUser } from '../../contexts/UserContext'
+import { useUser } from '../../contexts/userContext'
 import { styles } from './UserInfoScreen.styles'
 
 export const UserInfoScreen = () => {

@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StatusBar } from 'expo-status-bar'
 
 import { SCREENS } from './src/utils'
-import { UserProvider } from './src/contexts/UserContext'
+import { UserProvider } from './src/contexts/userContext'
 import { EventDetailScreen, MainStackScreen } from './src/screens'
 
 const LocationListStack = createNativeStackNavigator()
