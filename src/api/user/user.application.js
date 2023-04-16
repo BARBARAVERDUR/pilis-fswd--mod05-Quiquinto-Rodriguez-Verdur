@@ -1,4 +1,4 @@
-import { DevRepository } from './user.Infrastructure'
+import { DevRepository } from './user.infrastructure'
 import { AuthService } from './user.model'
 
 const repository = new DevRepository()
