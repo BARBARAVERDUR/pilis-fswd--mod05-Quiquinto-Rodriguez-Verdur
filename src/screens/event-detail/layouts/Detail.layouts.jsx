@@ -14,15 +14,17 @@ export const Detail = ({ event }) => {
       <Text style={styles.title}>{event.name}</Text>
       <Text style={styles.price}>{place.name}</Text>
       <Text style={styles.location}>{place.direction}</Text>
-      {currentUser!==null ? (
-        <View style={styles.ratingContainer}>
-          <Fav isFav={isFav} handlePress={()=>{setFav(isFav=>!isFav)}}/>
-        </View>
-      ):(
-        <View style={styles.ratingContainer}>
-          <Fav isFav={false}/>
-        </View>
-      )}
+      {currentUser !== null
+        ? (
+          <View style={styles.ratingContainer}>
+            <Fav isFav={isFav} handlePress={() => { setFav(isFav => !isFav) }} />
+          </View>
+          )
+        : (
+          <View style={styles.ratingContainer}>
+            <Fav isFav={false} />
+          </View>
+          )}
       <Text style={styles.description}>{event.description}</Text>
     </View>
   )
