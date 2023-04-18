@@ -1,10 +1,10 @@
+import { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { User } from '../../api/user'
 import { useUser } from '../../contexts/userContext'
 import { COLORS, SCREENS } from '../../utils'
 import { ErrorMessage, Loading, LogInForm } from './layouts'
-import { useState } from 'react'
-import { StyleSheet, View } from 'react-native'
 
 const ERROR_MESSAGE = 'Credenciales incorrectas'
 const styles = StyleSheet.create({
@@ -23,8 +23,8 @@ export const LoginScreen = () => {
 
   const handleLogin = ({ username, password }) => {
     setIsLoading(true)
-
     setError(null)
+
     User.LogIn(username, password)
       .then(user => {
         setIsLoading(false)
