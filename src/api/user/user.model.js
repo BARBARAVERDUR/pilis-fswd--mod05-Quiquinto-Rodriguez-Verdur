@@ -3,12 +3,14 @@ export class UserModel {
     id,
     username,
     avatar,
-    description
+    description,
+    favorites
   ) {
     this.id = id
     this.username = username
     this.avatar = avatar
     this.description = description
+    this.favorites = favorites
   }
 }
 

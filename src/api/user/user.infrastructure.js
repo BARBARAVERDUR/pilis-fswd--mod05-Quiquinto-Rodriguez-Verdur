@@ -23,7 +23,8 @@ export class DevRepository extends UserRepository {
       user.id,
       user.username,
       user.avatar,
-      user.description
+      user.description,
+      user.favorites
     )
   }
 }
