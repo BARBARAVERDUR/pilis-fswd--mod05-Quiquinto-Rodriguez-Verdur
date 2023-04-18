@@ -1,6 +1,6 @@
 import { Controller, useForm } from 'react-hook-form'
-import { Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { styles } from '../LoginScreen.styles'
+import { Text, TextInput, TouchableOpacity, View, StatusBar, StyleSheet } from 'react-native'
+import { COLORS } from '../../../utils/theme'
 
 export const LogInForm = ({ handleLogin }) => {
   const { control, handleSubmit, formState: { errors } } = useForm({
@@ -51,3 +51,41 @@ export const LogInForm = ({ handleLogin }) => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    marginTop: StatusBar.currentHeight
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    textAlign: 'center'
+  },
+  input: {
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    marginBottom: 5
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 8
+  },
+  button: {
+    backgroundColor: COLORS.primary,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    marginTop: 8,
+    alignItems: 'center'
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold'
+  }
+})
