@@ -1,11 +1,19 @@
 import { useNavigation } from '@react-navigation/native'
 import { User } from '../../api/user'
 import { useUser } from '../../contexts/userContext'
-import { SCREENS } from '../../utils'
+import { COLORS, SCREENS } from '../../utils'
 import { ErrorMessage, Loading, LogInForm } from './layouts'
 import { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
 
 const ERROR_MESSAGE = 'Credenciales incorrectas'
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.white
+  }
+})
 
 export const LoginScreen = () => {
   const navigation = useNavigation()
@@ -33,10 +41,10 @@ export const LoginScreen = () => {
   }
 
   return (
-    <>
+    <View style={styles.container}>
       <LogInForm handleLogin={handleLogin} />
       <Loading isLoading={isLoading} />
       <ErrorMessage message={error} />
-    </>
+    </View>
   )
 }
