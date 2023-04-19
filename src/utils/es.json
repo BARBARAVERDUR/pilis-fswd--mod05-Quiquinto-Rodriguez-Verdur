@@ -1,0 +1,20 @@
+{
+  "translation" : {
+    "Inicio" : "Inicio",
+    "Explorar" : "Explorar",
+    "Perfil" : "Perfil",
+    "Consulta el Calendario de Jujuy y enterate de todos los eventos!" : "Consulta el Calendario de Jujuy y enterate de todos los eventos!",
+    "Salir" : "Salir",
+    "Sobre mi" : "Sobre mi",
+    "Inicio de Sesión" : "Inicio de Sesión",
+    "Nombre de usuario" : "Nombre de usuario",
+    "El nombre de usuario es requerido" : "El nombre de usuario es requerido",
+    "Contraseña" : "Contraseña",
+    "La constraseña es requerida" : "La constraseña es requerida",
+    "Entrar": "Entrar",
+    "¿A dónde quieres ir?":"¿A dónde quieres ir?" ,
+    "Inicia sesión para ver la dirección en el mapa" : "Inicia sesión para ver la dirección en el mapa",
+    "Lenguaje cambiado con éxito":"Lenguaje cambiado con éxito",
+    "Hubo un error al intentar cambiar el lenguaje":"Hubo un error al intentar cambiar el lenguaje"
+  }
+}
