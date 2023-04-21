@@ -10,6 +10,15 @@ export class User {
   static async LogIn (username, password) {
     const localUser = await localServices.auth(username, password)
     if (localUser !== null) return localUser
-    return await Service.auth(username, password)
+
+    const user = await Service.auth(username, password)
+    if (user === null) return null
+    return await localServices.register(
+      user.username,
+      password,
+      user.avatar,
+      user.description,
+      user.favorites
+    )
   }
 }

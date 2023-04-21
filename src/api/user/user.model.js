@@ -18,6 +18,8 @@ export class UserRepository {
   async auth (username, password) {
     return new UserModel()
   }
+
+  async create (user) { return new UserModel() }
 }
 
 export class UserService {
@@ -27,5 +29,23 @@ export class UserService {
 
   async auth (username, password) {
     return this.repository.auth(username, password)
+  }
+
+  async register (
+    username,
+    password,
+    avatar,
+    description,
+    favorites
+  ) {
+    const user = {
+      username,
+      password,
+      avatar,
+      description,
+      favorites
+    }
+
+    return await this.repository.create(user)
   }
 }
