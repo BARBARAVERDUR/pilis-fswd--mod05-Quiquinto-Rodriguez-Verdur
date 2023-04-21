@@ -20,7 +20,7 @@ export class UserRepository {
   }
 }
 
-export class AuthService {
+export class UserService {
   constructor (repository = new UserRepository()) {
     this.repository = repository
   }
