@@ -28,8 +28,8 @@ export class DevRepository extends Repository {
   }
 
   async getById (id) {
-    const event = this.events.filter(e => e.id === id)
-    return Event.New(event)
+    const event = this.events.filter(e => e.id === id)[0]
+    return event != null ? Event.New(event) : null
   }
 
   async getByIds (listIds) {
