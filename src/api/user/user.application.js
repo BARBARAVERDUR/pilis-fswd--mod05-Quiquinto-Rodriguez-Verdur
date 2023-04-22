@@ -1,3 +1,4 @@
+import { Events } from '../events/events.application'
 import { DevRepository, StorageRepository } from './user.infrastructure'
 import { UserService } from './user.model'
 
@@ -23,5 +24,18 @@ export class User {
 
     User.data = newUser
     return newUser
+  }
+
+  async updateFavorite (id) {
+    const favorites = User.data.favorites
+
+    if (favorites.includes(id)) {
+      User.data.favorites = favorites.filter(fid => fid !== id)
+    } else {
+      const event = Events.GetEvent(id)
+      if (event !== null) User.data.favorites = favorites.push(event.id)
+    }
+
+    return await localServices.update(User.data)
   }
 }
