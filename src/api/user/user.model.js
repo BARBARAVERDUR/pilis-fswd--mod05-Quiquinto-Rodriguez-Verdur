@@ -20,6 +20,7 @@ export class UserRepository {
   }
 
   async create (user) { return new UserModel() }
+  async update (user) { return new UserModel() }
 }
 
 export class UserService {
@@ -47,5 +48,9 @@ export class UserService {
     }
 
     return await this.repository.create(user)
+  }
+
+  async update (user) {
+    return await this.repository.update(user)
   }
 }

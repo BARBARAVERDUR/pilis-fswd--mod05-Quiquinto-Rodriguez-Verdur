@@ -68,4 +68,15 @@ export class StorageRepository extends UserRepository {
     await AsyncStorage.setItem(KEY_USERS, JSON.stringify(users))
     return new UserModel(user.id, user.username, user.avatar, user.description, user.favorites)
   }
+
+  async update (user) {
+    const users = await getUsersStorage()
+    const userStorage = users.filter(u => u.username === user.username)[0]
+    if (userStorage == null) return null
+
+    const newUsers = users.filter(u => u.username !== user.username)
+    newUsers.push({ ...userStorage, ...users })
+    await AsyncStorage.setItem(KEY_USERS, JSON.stringify(newUsers))
+    return new UserModel(user.id, user.username, user.avatar, user.description, user.favorites)
+  }
 }

@@ -13,12 +13,15 @@ export class User {
 
     const user = await Service.auth(username, password)
     if (user === null) return null
-    return await localServices.register(
+    const newUser = await localServices.register(
       user.username,
       password,
       user.avatar,
       user.description,
       user.favorites
     )
+
+    User.data = newUser
+    return newUser
   }
 }
