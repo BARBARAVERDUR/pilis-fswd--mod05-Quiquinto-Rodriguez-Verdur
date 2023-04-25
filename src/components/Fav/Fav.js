@@ -4,7 +4,7 @@ import { COLORS } from '../../utils'
 import { Pressable } from 'react-native'
 
 export function Fav ({ isFav, handlePress = () => [] }) {
-  const [color, setColor] = useState(COLORS.inactive)
+  const [color, setColor] = useState(isFav ? COLORS.primary : COLORS.inactive)
 
   const onPress = () => {
     if (isFav) {
