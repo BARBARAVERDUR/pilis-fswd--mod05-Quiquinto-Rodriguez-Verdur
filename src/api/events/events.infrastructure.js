@@ -33,6 +33,6 @@ export class DevRepository extends Repository {
   }
 
   async getByIds (listIds) {
-    return this.listIds.map(id => this.getById(id))
+    return this.events.filter(e => listIds.includes(e.id))
   }
 }
