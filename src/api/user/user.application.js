@@ -26,7 +26,7 @@ export class User {
     return newUser
   }
 
-  async updateFavorite (id) {
+  static async updateFavorite (id) {
     const favorites = User.data.favorites
 
     if (favorites.includes(id)) {
