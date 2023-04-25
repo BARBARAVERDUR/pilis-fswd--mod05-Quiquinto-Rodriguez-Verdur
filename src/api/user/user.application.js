@@ -22,20 +22,19 @@ export class User {
       user.favorites
     )
 
-    User.data = newUser
     return newUser
   }
 
-  static async updateFavorite (id) {
-    const favorites = User.data.favorites
+  static async updateFavorite (user, eventId) {
+    const favorites = user.favorites
 
-    if (favorites.includes(id)) {
-      User.data.favorites = favorites.filter(fid => fid !== id)
+    if (favorites.includes(eventId)) {
+      user.favorites = favorites.filter(id => id !== eventId)
     } else {
-      const event = Events.GetEvent(id)
-      if (event !== null) User.data.favorites = favorites.push(event.id)
+      const event = Events.GetEvent(eventId)
+      if (event !== null) user.favorites.push(event.id)
     }
 
-    return await localServices.update(User.data)
+    return await localServices.update(user)
   }
 }
