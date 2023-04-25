@@ -1,0 +1,21 @@
+{
+  "translation" : {
+    "Inicio" : "Home",
+    "Explorar" : "Search",
+    "Perfil" : "Profile",
+    "Consulta el Calendario de Jujuy y enterate de todos los eventos!" : "Check the Jujuy Calendar and find out about all the events!",
+    "Salir" : "Exit",
+    "Sobre mi" : "About me",
+    "Inicio de Sesión" : "Sign In",
+    "Nombre de usuario" : "User Name",
+    "El nombre de usuario es requerido" : "The username is required",
+    "Contraseña" : "Contraseña",
+    "La constraseña es requerida" : "The password is required",
+    "Entrar": "Enter",
+    "¿A dónde quieres ir?":"Where do you want to go?" ,
+    "Inicia sesión para ver la dirección en el mapa":"Sign in to see the address on the map",
+    "Lenguaje cambiado con éxito":" Successfully changed language",
+    "Hubo un error al intentar cambiar el lenguaje": "There was an error trying to change the language"
+  
+  }
+}

@@ -1,9 +1,13 @@
 import React from 'react'
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
-import { useUser } from '../../contexts/userContext'
+import { useUser } from '../../contexts/UserContext'
 import { styles } from './UserInfoScreen.styles'
+import '../../utils/i18n'
+import { useTranslation } from 'react-i18next'
 
 export const UserInfoScreen = () => {
+  const { t, i18n } = useTranslation()
+
   const { currentUser, setCurrentUser } = useUser()
 
   const handleLogout = () => {
@@ -23,15 +27,14 @@ export const UserInfoScreen = () => {
         </View>
 
         <TouchableOpacity style={styles.button} onPress={handleLogout}>
-          <Text style={styles.buttonText}>Salir</Text>
+          <Text style={styles.buttonText}>{t('Salir')}</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.content}>
-        <Text style={styles.sectionTitle}>About Me</Text>
+        <Text style={styles.sectionTitle}>{t('Sobre mi')}</Text>
         <Text style={styles.sectionText}>{currentUser.description}</Text>
       </View>
-
     </ScrollView>
   )
 }

@@ -6,7 +6,10 @@ import { SCREENS } from './src/utils'
 import { UserProvider } from './src/contexts/userContext'
 import { EventDetailScreen, MainStackScreen } from './src/screens'
 
-const LocationListStack = createNativeStackNavigator()
+
+
+const LocationListStack = createNativeStackNavigator();
+
 
 export default function App () {
   return (
