@@ -7,7 +7,7 @@ import { useState } from 'react'
 export const Detail = ({ event }) => {
   const { place } = event
   const { currentUser } = useUser()
-  const [isFav, setFav] = useState(currentUser.favorites.includes(event.id))
+  const [isFav, setFav] = useState(currentUser?.favorites.includes(event.id))
 
   return (
     <View style={styles.textContainer}>
