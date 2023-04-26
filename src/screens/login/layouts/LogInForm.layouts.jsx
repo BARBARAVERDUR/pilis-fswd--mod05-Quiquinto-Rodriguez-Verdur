@@ -1,8 +1,11 @@
 import { Controller, useForm } from 'react-hook-form'
 import { Text, TextInput, TouchableOpacity, View, StatusBar, StyleSheet } from 'react-native'
 import { COLORS } from '../../../utils/theme'
+import { useTranslation } from 'react-i18next'
 
 export const LogInForm = ({ handleLogin }) => {
+  const { t } = useTranslation()
+
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       username: '',
@@ -12,13 +15,13 @@ export const LogInForm = ({ handleLogin }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Inicio de Sesión</Text>
+      <Text style={styles.title}>{t('Inicio de Sesión')}</Text>
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
             style={styles.input}
-            placeholder='Nombre de usuario'
+            placeholder={t('Nombre de usuario')}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -26,15 +29,17 @@ export const LogInForm = ({ handleLogin }) => {
           />
         )}
         name='username'
-        rules={{ required: 'El nombre de usuario es requerido' }}
+        rules={{ required: t('El nombre de usuario es requerido') }}
       />
-      {errors.username && <Text style={styles.errorText}>{errors.username.message}</Text>}
+      {errors.username && (
+        <Text style={styles.errorText}>{errors.username.message}</Text>
+      )}
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
             style={styles.input}
-            placeholder='Contraseña'
+            placeholder={t('Contraseña')}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -42,11 +47,16 @@ export const LogInForm = ({ handleLogin }) => {
           />
         )}
         name='password'
-        rules={{ required: 'La constraseña es requerida' }}
+        rules={{ required: t('La constraseña es requerida') }}
       />
-      {errors.password && <Text style={styles.errorText}>{errors.password.message}</Text>}
-      <TouchableOpacity style={styles.button} onPress={handleSubmit(handleLogin)}>
-        <Text style={styles.buttonText}>Entrar</Text>
+      {errors.password && (
+        <Text style={styles.errorText}>{errors.password.message}</Text>
+      )}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={handleSubmit(handleLogin)}
+      >
+        <Text style={styles.buttonText}>{t('Entrar')}</Text>
       </TouchableOpacity>
     </View>
   )

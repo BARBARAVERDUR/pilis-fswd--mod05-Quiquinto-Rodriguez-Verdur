@@ -1,81 +1,50 @@
+import { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { Controller, useForm } from 'react-hook-form'
-import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { User } from '../../api/user'
 import { useUser } from '../../contexts/userContext'
-import { SCREENS } from '../../utils'
-import { styles } from './LoginScreen.styles'
-import '../../utils/i18n'
-import { useTranslation } from 'react-i18next'
+import { COLORS, SCREENS } from '../../utils'
+import { ErrorMessage, Loading, LogInForm } from './layouts'
+
+const ERROR_MESSAGE = 'Credenciales incorrectas'
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.white
+  }
+})
 
 export const LoginScreen = () => {
-  const { t, i18n } = useTranslation()
-
   const navigation = useNavigation()
   const { setCurrentUser } = useUser()
-  const {
-    control,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({
-    defaultValues: {
-      username: '',
-      password: ''
-    }
-  })
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleLogin = ({ username, password }) => {
-    User.LogIn(username, password).then((user) => {
-      setCurrentUser(user)
-      navigation.navigate(SCREENS.HOME)
-    })
+    setIsLoading(true)
+    setError(null)
+
+    User.LogIn(username, password)
+      .then(user => {
+        setIsLoading(false)
+
+        if (user === null) {
+          setIsLoading(false)
+          setError(ERROR_MESSAGE)
+          return
+        }
+
+        setCurrentUser(user)
+        navigation.navigate(SCREENS.HOME)
+      })
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{t('Inicio de Sesión')}</Text>
-      <Controller
-        control={control}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            placeholder={t('Nombre de usuario')}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            autoCapitalize='none'
-          />
-        )}
-        name='username'
-        rules={{ required: t('El nombre de usuario es requerido') }}
-      />
-      {errors.username && (
-        <Text style={styles.errorText}>{errors.username.message}</Text>
-      )}
-      <Controller
-        control={control}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            placeholder={t('Contraseña')}
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            secureTextEntry
-          />
-        )}
-        name='password'
-        rules={{ required: t('La constraseña es requerida') }}
-      />
-      {errors.password && (
-        <Text style={styles.errorText}>{errors.password.message}</Text>
-      )}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleSubmit(handleLogin)}
-      >
-        <Text style={styles.buttonText}>{t('Entrar')}</Text>
-      </TouchableOpacity>
+      <LogInForm handleLogin={handleLogin} />
+      <Loading isLoading={isLoading} />
+      <ErrorMessage message={error} />
     </View>
   )
 }
