@@ -17,7 +17,7 @@ const DefaultMap = () => {
     navigation.navigate(SCREENS.PROFILE)
   }
 
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation();
 
   return (
     <TouchableWithoutFeedback onPress={handleImagePress}>
