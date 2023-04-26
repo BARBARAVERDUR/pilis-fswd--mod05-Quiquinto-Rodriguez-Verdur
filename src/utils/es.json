@@ -15,6 +15,7 @@
     "¿A dónde quieres ir?":"¿A dónde quieres ir?" ,
     "Inicia sesión para ver la dirección en el mapa" : "Inicia sesión para ver la dirección en el mapa",
     "Lenguaje cambiado con éxito":"Lenguaje cambiado con éxito",
-    "Hubo un error al intentar cambiar el lenguaje":"Hubo un error al intentar cambiar el lenguaje"
+    "Hubo un error al intentar cambiar el lenguaje":"Hubo un error al intentar cambiar el lenguaje",
+    "Credenciales incorrectas": "Credenciales incorrectas"
   }
 }

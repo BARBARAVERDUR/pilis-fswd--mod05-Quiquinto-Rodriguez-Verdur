@@ -15,7 +15,8 @@
     "¿A dónde quieres ir?":"Where do you want to go?" ,
     "Inicia sesión para ver la dirección en el mapa":"Sign in to see the address on the map",
     "Lenguaje cambiado con éxito":" Successfully changed language",
-    "Hubo un error al intentar cambiar el lenguaje": "There was an error trying to change the language"
+    "Hubo un error al intentar cambiar el lenguaje": "There was an error trying to change the language",
+    "Credenciales incorrectas":"Incorrect credentials"
   
   }
 }
