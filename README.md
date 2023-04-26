@@ -48,3 +48,7 @@ Los nombres usuarios de testing son los respectivos de la cuenta de github con l
 - Jesus Matias, Rodriguez
 - Bárbara Antonella Verdur
 
+## Usuario por defecto
+
+- username: user
+- password: user
