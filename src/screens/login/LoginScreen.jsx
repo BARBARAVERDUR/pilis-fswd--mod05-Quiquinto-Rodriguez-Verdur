@@ -5,8 +5,12 @@ import { User } from '../../api/user'
 import { useUser } from '../../contexts/userContext'
 import { COLORS, SCREENS } from '../../utils'
 import { ErrorMessage, Loading, LogInForm } from './layouts'
+import { useTranslation } from 'react-i18next'
 
-const ERROR_MESSAGE = 'Credenciales incorrectas'
+
+const { t } = useTranslation();
+const ERROR_MESSAGE = t('Credenciales incorrectas')
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
