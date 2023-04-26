@@ -6,7 +6,7 @@ import '../../utils/i18n'
 import { useTranslation } from 'react-i18next'
 
 export const UserInfoScreen = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const { currentUser, setCurrentUser } = useUser()
 
